@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cuahang-682a8": {
+      "hosting": {
+        "cuahang": [
+          "cuahang-682a8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cuahang-682a8"
+  }
+}

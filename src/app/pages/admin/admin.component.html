@@ -1,0 +1,57 @@
+@for (item of this.productService.listItem; track $index) {
+
+<div class="col">
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top"
+            src="http://images.all-free-download.com/images/graphicthumb/vector_illustration_of_ripe_bananas_567893.jpg"
+            alt="Card image cap">
+        <div class="card-block">
+            <h4 class="card-title">Name: {{item.name}}</h4>
+            <p class="card-text">Price: {{item.price}}</p>
+            <a href="#" data-name="Banana" data-price="1.22" class="add-to-cart btn btn-primary">Add to cart</a>
+
+            <button (click)="deleteProduct(item)">xóa</button>
+            <button (click)="openDialog()">update</button>
+        </div>
+    </div>
+</div>
+}
+<div class="add">
+    <form [formGroup]="form">
+
+        <input type="text" id="name" placeholder="enter name" formControlName="name" />
+
+        <input type="number" id="price" placeholder="enter price" formControlName="price" />
+
+        <input type="text" id="description" placeholder="enter description" formControlName="description" />
+
+        <input type="number" id="stock" placeholder="enter quality" formControlName="stock" />
+
+        <input type="text" id="image" placeholder="enter image" formControlName="image" />
+        <div>
+            <button type="submit" (click)="submit()">Submit</button>
+
+
+        </div>
+    </form>
+</div>
+
+<!-- <dialog #appDialog class="update">
+    <form [formGroup]="updateForm">
+
+        <input type="text" id="name" placeholder="enter name" formControlName="name" />
+
+        <input type="number" id="price" placeholder="enter price" formControlName="price" />
+
+        <input type="text" id="description" placeholder="enter description" formControlName="description" />
+
+        <input type="number" id="stock" placeholder="enter quality" formControlName="stock" />
+
+        <input type="text" id="image" placeholder="enter image" formControlName="image" />
+        <div>
+            <button type="submit" (click)="Perform()">update</button>
+
+
+        </div>
+    </form>
+</dialog> -->
