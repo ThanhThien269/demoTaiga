@@ -1,16 +1,14 @@
-.show-cart li {
-    display: flex;
+.col {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+.img {
+  width: 10rem;
+  height: 10rem;
+
+  .image {
+    width: 100%;
   }
-  .card {
-    margin-bottom: 20px;
-   
-  }
-  .card-img-top {
-    width: 200px;
-    height: 200px;
-    align-self: center;
-  }
-  .col{
-    display: flex;
-    flex-wrap: wrap;
-  }
+}

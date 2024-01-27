@@ -1,16 +1,31 @@
 <div class="col">
-    @for (item of this.productService.listItem; track $index) {
-    <div class="card" style="width: 20rem;">
-        <img class="card-img-top"
-            src="http://images.all-free-download.com/images/graphicthumb/vector_illustration_of_ripe_bananas_567893.jpg"
-            alt="Card image cap">
-        <div class="card-block">
-            <h4 class="card-title">Name: {{item.name}}</h4>
-            <p class="card-text">Price: {{item.price}}</p>
-            <a data-name="Banana" (click)="addToCart(item)" data-price="1.22" class="add-to-cart btn btn-primary">Add to
-                cart</a>
-        </div>
-    </div>
+  @for (item of this.productService.listItem; track $index) {
+  <div class="tui-col_md-3">
+    <a rel="noreferrer" size="l" target="_blank" tuiIsland [hoverable]="true">
+      <div class="img">
+        <img
+          alt="Taiga"
+          class="image"
+          src="http://images.all-free-download.com/images/graphicthumb/vector_illustration_of_ripe_bananas_567893.jpg"
+        />
+      </div>
 
-    }
+      <h3 class="title title_size_s">Name</h3>
+      <p class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua
+      </p>
+
+      <h4>$20</h4>
+
+      <button
+        tuiButton
+        type="button"
+        class="tui-space_right-3 tui-space_bottom-3"
+      >
+        View
+      </button>
+    </a>
+  </div>
+  }
 </div>

@@ -24,7 +24,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/productlist',
+    redirectTo: '/admin',
     pathMatch: 'full',
   },
 ];
