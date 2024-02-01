@@ -123,7 +123,7 @@
         tuiHintContent=" ID"
         tuiTextfieldExampleText="Enter ID"
       >
-        ID
+        {{ selectedItem?.id }}
 
         <input tuiTextfield />
         @if (!isCreate) {
@@ -138,9 +138,7 @@
         tuiHintContent=" item name "
         tuiTextfieldExampleText="Enter  Name"
       >
-        Name @if (!isCreate) {
-        <span class="tui-required">{{ selectedItem?.name }}</span>
-        }
+        {{ selectedItem?.name }}
       </tui-input>
       <tui-error
         [error]="[] | tuiFieldError | async"

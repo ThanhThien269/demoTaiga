@@ -1,6 +1,56 @@
-<div class="navbar">
-  <button (click)="goToAdmin()">go to admin</button>
-  <button (click)=" goToCart()">go to cart</button>
-  <button (click)="goToProductList()">go to home</button>
-  <button (click)="goToDetail()">go to detail</button>
+<div class="col">
+  <div class="tui-col_md-3">
+    <a rel="noreferrer" size="l" target="_blank" tuiIsland>
+      @if(Pokemon.sprites.other.dream_world.front_default){
+      <div class="img">
+        <img
+          alt="Taiga"
+          class="image"
+          [src]="Pokemon.sprites.other.dream_world.front_default"
+        />
+      </div>
+      } @else {
+      <div class="img">
+        <img
+          alt="Taiga"
+          class="image"
+          [src]="Pokemon.sprites.other.home.front_default"
+        />
+      </div>
+      }
+
+      <h3 class="title title_size_s">{{ Pokemon.name }}</h3>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <p class="text">Height: {{ Pokemon.height }}</p>
+        <progress
+          max="20"
+          tuiProgressBar
+          class="progress"
+          [value]="Pokemon.height"
+        ></progress>
+      </div>
+
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <p class="text">Weight: {{ Pokemon.weight }}</p>
+        <progress
+          max="500"
+          tuiProgressBar
+          class="progress"
+          [value]="Pokemon.weight"
+        ></progress>
+      </div>
+    </a>
+  </div>
 </div>

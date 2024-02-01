@@ -117,12 +117,12 @@ export class AdminComponent {
 
   openEdit: boolean = false;
   userForm = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl(),
-    description: new FormControl(),
-    price: new FormControl(),
-    image: new FormControl(),
-    stock: new FormControl(),
+    id: new FormControl(this.selectedItem?.id),
+    name: new FormControl(this.selectedItem?.name),
+    description: new FormControl(this.selectedItem?.description),
+    price: new FormControl(this.selectedItem?.price),
+    image: new FormControl(this.selectedItem?.image),
+    stock: new FormControl(this.selectedItem?.stock),
   });
   open = false;
 

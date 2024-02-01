@@ -4,27 +4,4 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { CartlistComponent } from './pages/cartlist/cartlist.component';
 
-export const routes: Routes = [
-  {
-    path: 'productlist',
-    component: ProductlistComponent,
-  },
-
-  {
-    path: 'detail',
-    component: DetailComponent,
-  },
-  {
-    path: 'admin',
-    component: AdminComponent,
-  },
-  {
-    path: 'cart',
-    component: CartlistComponent,
-  },
-  {
-    path: '**',
-    redirectTo: '/admin',
-    pathMatch: 'full',
-  },
-];
+export const routes: Routes = [];

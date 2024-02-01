@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 import { ProductService } from '../../services/product.service';
 import { Item } from '../../models/product.model';
+import { Store } from '@ngrx/store';
+import * as CartActions from '../../ngrx/actions/cart.actions';
 @Component({
   selector: 'app-productlist',
   standalone: true,
@@ -10,10 +12,8 @@ import { Item } from '../../models/product.model';
   styleUrl: './productlist.component.scss',
 })
 export class ProductlistComponent {
-  constructor(public productService: ProductService) {}
+  constructor(public productService: ProductService, private store: Store) {}
   addToCart(item: Item) {
-    item.quality++;
-    item.stock--;
-    this.productService.addCartItem(item);
+    this.store.dispatch(CartActions.addItem({ product: item }));
   }
 }

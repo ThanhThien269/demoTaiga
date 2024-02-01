@@ -7,3 +7,8 @@ export interface Item {
   image: string;
   stock: number;
 }
+export interface Cart {
+  itemList: Item[];
+  total: number;
+  id: string;
+}

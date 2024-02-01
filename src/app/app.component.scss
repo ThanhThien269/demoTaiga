@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col {
+  width: 90%;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+.img {
+  width: 10rem;
+  height: 15rem;
+
+  .image {
+    width: 100%;
+  }
+}
+.tui-col_md-3 {
+  margin: 1rem;
+}

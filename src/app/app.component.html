@@ -1,4 +1,61 @@
-<tui-root>
-  <app-navbar></app-navbar>
-  <router-outlet></router-outlet>
+<tui-root class="container">
+  @for(gen of genList;track gen.name){
+  <button (click)="getSpeciesList(gen.value)">{{ gen.name }}</button>
+  } @if(pokemonList$ | async ){
+  <div class="col">
+    @for(item of pokemonList$ | async;track item.id;let i = $index){
+    <!-- <div class="pokemon-card">
+      <div class="pokemon-card__image">
+        <img [src]="item.sprites.other.dream_world.front_default" />
+      </div>
+      <div class="pokemon-card__name">
+        <h3>{{ item.name }}</h3>
+      </div>
+    </div> -->
+    <div class="tui-col_md-3">
+      <a rel="noreferrer" size="l" target="_blank" tuiIsland>
+        @if(item.sprites.other.dream_world.front_default){
+        <div class="img">
+          <img
+            alt="Taiga"
+            class="image"
+            [src]="item.sprites.other.dream_world.front_default"
+          />
+        </div>
+        } @else {
+        <div class="img">
+          <img
+            alt="Taiga"
+            class="image"
+            [src]="item.sprites.other.home.front_default"
+          />
+        </div>
+        }
+
+        <h3 class="title title_size_s">{{ item.name }}</h3>
+        <!-- <p class="text">Height: {{ item.height }}</p>
+
+        <h4>Weight: {{ item.weight }}</h4>  -->
+
+        <button
+          tuiButton
+          type="button"
+          class="tui-space_right-3 tui-space_bottom-3"
+          (click)="showDialog(item)"
+        >
+          View
+        </button>
+      </a>
+    </div>
+    }
+  </div>
+
+  }
 </tui-root>
+<ng-template
+  let-observer
+  [tuiDialogOptions]="{ label: 'Pokemon detail', size: 'm' }"
+  [(tuiDialog)]="open"
+>
+  <app-navbar [Pokemon]="chosenPokemon"></app-navbar>
+</ng-template>

@@ -1,16 +1,38 @@
-@for (item of this.productService.cartList; track $index) {
-
-<div class="col">
-    <div class="card" style="width: 20rem;">
-        <img class="card-img-top"
-            src="http://images.all-free-download.com/images/graphicthumb/vector_illustration_of_ripe_bananas_567893.jpg"
-            alt="Card image cap">
-        <div class="card-block">
-            <h4 class="card-title">Name: {{item.name}}</h4>
-            <p class="card-text">Price: {{item.price}}</p>
-            <p>quality:{{item.quality}}</p>
-            <a data-name="Banana" data-price="1.22" class="add-to-cart btn btn-primary">Add to cart</a>
-        </div>
-    </div>
+@for (item of cart.itemList; track item;let i = $index) {
+<div class="product">
+  <div class="product-image">
+    <img src="{{ item.image }}" />
+  </div>
+  <div class="product-details">
+    <div class="product-title">{{ item.name }}</div>
+    <p class="product-description">
+      {{ item.description }}
+    </p>
+  </div>
+  <div class="product-price">{{ item.price }}</div>
+  <div class="product-quantity">
+    <input type="number" min="1" [formControl]="this.quantityFormList[i]" />
+  </div>
+  <div class="product-removal">
+    <button
+      tuiButton
+      type="button"
+      size="s"
+      appearance="accent"
+      (click)="removeProduct(i)"
+    >
+      Remove
+    </button>
+  </div>
+  <div class="product-line-price">
+    {{ count(this.quantityFormList[i].value, item.price) }}
+  </div>
 </div>
 }
+
+<div class="totals">
+  <div class="totals-item">
+    <label>Subtotal</label>
+    <div class="totals-value" id="cart-subtotal">{{ cart.total }}</div>
+  </div>
+</div>
